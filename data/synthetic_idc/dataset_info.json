@@ -1,0 +1,19 @@
+{
+  "dataset": "Synthetic IDC",
+  "num_samples": 50,
+  "splits": {
+    "train": 40,
+    "val": 5,
+    "test": 5
+  },
+  "change_types": [
+    "add",
+    "remove",
+    "color",
+    "position"
+  ],
+  "image_size": [
+    336,
+    336
+  ]
+}

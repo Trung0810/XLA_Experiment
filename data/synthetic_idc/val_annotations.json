@@ -1,0 +1,37 @@
+[
+  {
+    "image_id": 40,
+    "image_a": "images_a/0040.png",
+    "image_b": "images_b/0040.png",
+    "caption": "A blue rectangle was added on the right side of the scene",
+    "change_type": "add"
+  },
+  {
+    "image_id": 41,
+    "image_a": "images_a/0041.png",
+    "image_b": "images_b/0041.png",
+    "caption": "A orange rectangle on the right side was removed from the scene",
+    "change_type": "remove"
+  },
+  {
+    "image_id": 42,
+    "image_a": "images_a/0042.png",
+    "image_b": "images_b/0042.png",
+    "caption": "A blue circle was added on the left side of the scene",
+    "change_type": "add"
+  },
+  {
+    "image_id": 43,
+    "image_a": "images_a/0043.png",
+    "image_b": "images_b/0043.png",
+    "caption": "A green triangle was added on the left side of the scene",
+    "change_type": "add"
+  },
+  {
+    "image_id": 44,
+    "image_a": "images_a/0044.png",
+    "image_b": "images_b/0044.png",
+    "caption": "A green circle was added on the left side of the scene",
+    "change_type": "add"
+  }
+]

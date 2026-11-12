@@ -1,0 +1,37 @@
+[
+  {
+    "image_id": 45,
+    "image_a": "images_a/0045.png",
+    "image_b": "images_b/0045.png",
+    "caption": "The red circle on the left side changed color to blue",
+    "change_type": "color"
+  },
+  {
+    "image_id": 46,
+    "image_a": "images_a/0046.png",
+    "image_b": "images_b/0046.png",
+    "caption": "The purple circle on the right side changed color to orange",
+    "change_type": "color"
+  },
+  {
+    "image_id": 47,
+    "image_a": "images_a/0047.png",
+    "image_b": "images_b/0047.png",
+    "caption": "A green circle was added on the left side of the scene",
+    "change_type": "add"
+  },
+  {
+    "image_id": 48,
+    "image_a": "images_a/0048.png",
+    "image_b": "images_b/0048.png",
+    "caption": "The green triangle moved from the right to the left side",
+    "change_type": "position"
+  },
+  {
+    "image_id": 49,
+    "image_a": "images_a/0049.png",
+    "image_b": "images_b/0049.png",
+    "caption": "A purple triangle was added on the right side of the scene",
+    "change_type": "add"
+  }
+]

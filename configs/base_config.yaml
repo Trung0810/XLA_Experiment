@@ -1,0 +1,70 @@
+# Base Configuration for M3Diff Training
+
+# Model Configuration
+model:
+  name: "m3diff"
+  base_model: "liuhaotian/llava-v1.5-7b"
+  use_quantization: true
+  quantization_bits: 4  # 4-bit quantization for 4GB VRAM
+  
+  # MDP Module
+  mdp:
+    num_scales: 3
+    num_heads: 8
+    hidden_dim: 1024
+  
+  # LoRA Configuration
+  lora:
+    r: 8  # Reduced from 64 due to VRAM constraint
+    alpha: 16  # Reduced from 128
+    dropout: 0.05
+    target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+    bias: "none"
+
+# Training Configuration
+training:
+  num_epochs: 3
+  batch_size: 1  # Must be 1 for 4GB VRAM
+  gradient_accumulation_steps: 16  # Effective batch size = 16
+  learning_rate: 2.0e-4
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  
+  # Optimization
+  mixed_precision: "fp16"  # Use fp16 (bf16 may not be supported on RTX 3050 Ti)
+  gradient_checkpointing: true
+  
+  # Logging and Saving
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 100
+  
+  # Output
+  output_dir: "./experiments/m3diff_synthetic"
+  
+# Dataset Configuration
+dataset:
+  name: "synthetic_idc"
+  data_dir: "./data/synthetic_idc"
+  image_size: 336
+  max_caption_length: 128
+  
+  # Data splits
+  train_file: "train_annotations.json"
+  val_file: "val_annotations.json"
+  test_file: "test_annotations.json"
+
+# Evaluation Configuration
+evaluation:
+  metrics: ["BLEU-1", "BLEU-2", "BLEU-3", "BLEU-4", "METEOR", "ROUGE-L", "CIDEr", "SPICE"]
+  max_length: 100
+  num_beams: 3
+  temperature: 1.0
+  top_p: 0.9
+
+# Hardware Configuration  
+hardware:
+  device: "cuda"
+  num_workers: 0  # Must be 0 on Windows to avoid multiprocessing issues
+  pin_memory: false  # Disabled for stability on Windows
